@@ -1,68 +1,65 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+* {
+  font-family: "Audiowide";
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: var(--letter-spacing);
+  line-height: var(--line-height);
+  scroll-behavior: smooth;
+  scroll-margin-top: 16vh;
+  box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+:root {
+  /* Colors */
+  --grey-1: #55555566;
+  --grey-2: #4e4e4e;
+  --grey-3: #333333;
+  --grey-4: #616161;
+  --grey-5: #262626;
+
+  --black-1: #191919;
+  --black-2: #141414;
+  --black-3: #151515;
+
+  --white-1: #ffffff;
+  --white-2: #ffffffe2;
+
+  --green-1: #88ce52;
+  --green-2: #66a435;
+
+  --lightblue-1: #4bade8;
+
+  /* Fonts */
+  --font-size-1: 0.8rem;
+  --font-size-2: 0.9rem;
+  --font-size-3: 1.1rem;
+  --font-size-4: 1.35rem;
+  --letter-spacing: 0.5px;
+  --line-height: 1.3;
+
+  /* Shapes */
+  --border-radius: 1rem;
+  --ring-border: 1.5vw;
+  --ring-border-phone: 1.5vh;
+
+  /* Others */
+  --transition-1: 0.2s ease-in-out all;
+  --transition-2: 0.35s ease-in-out all;
+  --transition-3: 0.5s ease-in-out all;
 }
-a:hover {
-  color: #535bf2;
+
+::placeholder {
+  color: var(--grey-4);
+  font-size: 1.3rem;
+}
+
+input:focus {
+  outline: none;
 }
 
 body {
   margin: 0;
+
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  flex-direction: column;
+  background: var(--black-1);
 }

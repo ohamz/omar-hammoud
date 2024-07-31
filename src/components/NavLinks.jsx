@@ -1,8 +1,8 @@
-import "./NavLinks.css";
+import "../css/NavLinks.css";
 
 function NavLinks({ className }) {
   const onDownloadCV = () => {
-    window.open("../assets/Omar's CV.pdf", "_blank");
+    window.open("/assets/Omar's CV.pdf", "_blank");
   };
 
   return (

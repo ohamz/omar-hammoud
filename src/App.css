@@ -1,63 +1,7 @@
-* {
-  font-family: "Audiowide";
-  font-weight: 400;
-  letter-spacing: var(--letter-spacing);
-  line-height: var(--line-height);
-  scroll-behavior: smooth;
-  scroll-margin-top: 16vh;
-  box-sizing: border-box;
-}
-
-:root {
-  /* Colors */
-  --grey-1: #55555566;
-  --grey-2: #4e4e4e;
-  --grey-3: #333333;
-  --grey-4: #616161;
-  --grey-5: #262626;
-
-  --black-1: #191919;
-  --black-2: #141414;
-  --black-3: #151515;
-
-  --white-1: #ffffff;
-  --white-2: #ffffffe2;
-
-  --green-1: #88ce52;
-  --green-2: #66a435;
-
-  --lightblue-1: #4bade8;
-
-  /* Fonts */
-  --font-size-1: 0.8rem;
-  --font-size-2: 0.9rem;
-  --font-size-3: 1.1rem;
-  --font-size-4: 1.35rem;
-  --letter-spacing: 0.5px;
-  --line-height: 1.3;
-
-  /* Shapes */
-  --border-radius: 1rem;
-  --ring-border: 1.5vw;
-  --ring-border-phone: 1.5vh;
-
-  /* Others */
-  --transition-1: 0.2s ease-in-out all;
-  --transition-2: 0.35s ease-in-out all;
-  --transition-3: 0.5s ease-in-out all;
-}
-
-::placeholder {
-  color: var(--grey-4);
-  font-size: 1.3rem;
-}
-
-input:focus {
-  outline: none;
-}
-
-body {
+#root {
+  /* width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  background: var(--black-1);
+  background: var(--black-1); */
 }
