@@ -1,0 +1,23 @@
+.btn {
+  background: var(--green-1);
+  color: var(--black-2);
+  font-size: 0.9rem;
+  padding: 3vh 0vw;
+  border: 0;
+  border-radius: var(--border-radius);
+  margin-top: 2.5rem;
+  text-transform: uppercase;
+  transition: var(--transition-1);
+}
+
+.btn:hover {
+  background: var(--green-2);
+  transition: var(--transition-1);
+}
+
+@media screen and (max-width: 991px) {
+  /* Buttons */
+  .btn {
+    font-size: 0.85rem;
+  }
+}

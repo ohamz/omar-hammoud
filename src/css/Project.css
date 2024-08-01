@@ -1,0 +1,211 @@
+.project {
+  position: relative;
+  width: 24vw;
+  height: 24vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--grey-1);
+  border-radius: var(--border-radius);
+  padding: 3vw;
+  overflow: hidden;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius);
+  transition: var(--transition-3);
+}
+
+.project-txt {
+  width: 85%;
+  height: 85%;
+  position: absolute;
+  display: flex;
+  transform: translateY(24vw);
+  flex-direction: column;
+  justify-content: center;
+  transition: var(--transition-3);
+}
+
+.project:hover > .project-img {
+  opacity: 0.15;
+  transition: var(--transition-3);
+}
+
+.project:hover > .project-txt {
+  transform: translateY(0);
+  transition: var(--transition-3);
+}
+
+.project-txt-title {
+  text-transform: capitalize;
+  height: 25%;
+  margin-top: 0;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.project-txt-content {
+  height: 65%;
+  text-align: start;
+}
+
+.project-txt-footer {
+  height: 10%;
+  margin: 0;
+  text-align: start;
+}
+
+#project-0 {
+  background: url("../assets/projects-icons/feedme_logo.webp") center/cover
+    no-repeat;
+}
+
+#project-1 {
+  background: url("../assets/projects-icons/bicycle.webp") center/cover
+    no-repeat;
+}
+
+#project-2 {
+  background: url("../assets/projects-icons/computer.webp") center/cover
+    no-repeat;
+}
+
+#project-3 {
+  background: url("../assets/projects-icons/snake.webp") center/cover no-repeat;
+}
+
+#project-4 {
+  background: url("../assets/projects-icons/cat.webp") center/cover no-repeat;
+}
+
+/* 
+-----------------------
+Adjust to small laptops
+-----------------------
+*/
+@media screen and (max-width: 1199px) {
+  /* Main - Projects - Cards text size */
+  .project-txt-title {
+    font-size: 1.25rem;
+  }
+
+  .project-txt-content,
+  .project-txt-footer {
+    font-size: 1rem;
+  }
+}
+
+/*
+  ---------------------
+  Adjust to big tablets
+  ---------------------
+  */
+@media screen and (max-width: 1063px) {
+  .project-txt-title {
+    font-size: 1.15rem;
+  }
+
+  .project-txt-content,
+  .project-txt-footer {
+    font-size: 0.95rem;
+  }
+}
+
+/* 
+-----------------
+Adjust to tablets
+-----------------
+*/
+@media screen and (max-width: 991px) {
+  ::placeholder {
+    font-size: 1.1rem;
+  }
+
+  /* Main */
+  .main-section-separator {
+    height: 6vw;
+  }
+
+  .main-section h1 {
+    font-size: 2.4rem;
+  }
+
+  .main-section h2 {
+    font-size: 1.7rem;
+  }
+
+  .main-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .home-intro {
+    font-size: 1.7rem;
+  }
+
+  .main-section h5 {
+    font-size: 0.9rem;
+  }
+
+  p,
+  .footer-txt {
+    font-size: 1.05rem;
+  }
+
+  /* Main - About - Ring text size */
+  .ring-txt {
+    font-size: 1.2rem;
+  }
+
+  /* Main - Project - Card text size */
+  .project-txt-title {
+    font-size: 0.85rem;
+  }
+
+  .project-txt-content,
+  .project-txt-footer {
+    font-size: 0.75rem;
+  }
+
+  /* Footer */
+  .footer-logo {
+    font-size: 1.15rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1rem;
+  }
+
+  /* Buttons */
+  .btn {
+    font-size: 0.85rem;
+  }
+}
+
+/* 
+  -----------------------
+  Adjust to mobile phones
+  -----------------------
+  */
+@media screen and (max-width: 767px) {
+  /* Main - Projects - Card layout */
+  .project {
+    width: 75vw;
+    height: 75vw;
+  }
+
+  .project-txt {
+    transform: translateY(75vw);
+  }
+
+  .project-txt-title {
+    font-size: 1.5rem;
+  }
+
+  .project-txt-content,
+  .project-txt-footer {
+    font-size: 1.1rem;
+  }
+}

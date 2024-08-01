@@ -1,0 +1,29 @@
+.social-icon {
+  width: 32px;
+  height: 32px;
+  background-color: var(--white-2);
+  border-radius: 40%;
+  border: 0;
+  padding: 4px;
+}
+
+.social-icon:hover {
+  background-color: var(--grey-2);
+}
+
+#github-icon:hover {
+  content: url("/assets/socials-icons/github-mark-white.webp");
+  background-color: var(--grey-1);
+}
+
+/* 
+-----------------------
+Adjust to mobile phones
+-----------------------
+*/
+@media screen and (max-width: 767px) {
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+}

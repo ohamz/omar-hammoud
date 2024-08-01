@@ -1,0 +1,25 @@
+.main-section-separator {
+  height: 8vw;
+}
+
+/* 
+-----------------
+Adjust to tablets
+-----------------
+*/
+@media screen and (max-width: 991px) {
+  .main-section-separator {
+    height: 6vw;
+  }
+}
+
+/* 
+-----------------------
+Adjust to mobile phones
+-----------------------
+*/
+@media screen and (max-width: 767px) {
+  .main-section-separator {
+    height: 10vh;
+  }
+}

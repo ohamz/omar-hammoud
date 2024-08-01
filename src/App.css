@@ -5,3 +5,341 @@
   flex-direction: column;
   background: var(--black-1); */
 }
+
+/* 
+----
+Main
+----
+*/
+.main-section {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-1);
+  padding: 0 3vw 2vw 4vw;
+}
+
+.main-section h1 {
+  text-transform: uppercase;
+  font-size: 3.2rem;
+}
+.main-section h2 {
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  margin: 2vh 0;
+}
+.main-section h3 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin: 0.6rem 0;
+}
+.home-intro {
+  text-transform: capitalize;
+  font-size: 2.2rem;
+  margin: 0;
+  margin-top: 4vh;
+}
+.main-section h5 {
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  margin-bottom: 0;
+}
+.main-section-title {
+  font-family: "Genos";
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* 
+-----------
+Main - Home 
+-----------
+*/
+#home {
+  height: 105vh;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  background-color: var(--black-3);
+  padding-bottom: 0;
+  margin-bottom: 5vh;
+}
+
+.home-txt-box {
+  width: 50vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+}
+
+.green-title {
+  color: var(--green-1);
+}
+
+.home-img {
+  width: 45vw;
+  height: 100%;
+  background-color: var(--black-3);
+  background: url("../assets/animoji.webp") center/cover no-repeat;
+  border-radius: var(--border-radius);
+}
+
+#home-btn {
+  display: flex;
+  align-self: flex-start;
+  gap: 1vw;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-1);
+  background-color: transparent;
+  border: 0;
+  margin: 4vh 0;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: var(--transition-1);
+}
+
+#home-btn:hover {
+  color: var(--green-1);
+  transition: var(--transition-2);
+
+  .icon {
+    background-color: var(--green-1);
+    transition: var(--transition-2);
+  }
+}
+
+/* 
+------------
+Main - About
+------------
+*/
+#about {
+  gap: 12vh;
+}
+
+.about-me {
+  height: auto;
+  display: flex;
+  gap: 6vw;
+}
+
+.about-img-box {
+  width: 36vw;
+  background: url("/assets/my-image.webp") center/cover;
+  border-radius: var(--border-radius);
+  filter: grayscale(1);
+}
+
+/* .about-img {
+  width: 100%;
+  height: 100%;
+} */
+
+.about-content {
+  width: 50vw;
+}
+
+.about-content-head {
+  width: 70%;
+}
+
+.about-content-txt {
+  width: 95%;
+}
+
+/* 
+--------------------
+Main - About - Rings
+--------------------
+*/
+.rings {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0 7vw;
+}
+
+/* 
+---------------
+Main - Projects
+---------------
+*/
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4vw 4vw;
+  padding: 4vh 2vw;
+}
+
+/* 
+--------------
+Main - Contact
+--------------
+ */
+.contact-content {
+  height: 85vh;
+  display: flex;
+  gap: 9vw;
+  padding: 0vh 6vw;
+  margin-top: 6vh;
+}
+
+.contact-txt-box {
+  width: 85%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  border-bottom: 1px solid var(--grey-4);
+  padding-bottom: 2vh;
+}
+
+.follow-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+.socials-icons {
+  display: flex;
+  gap: 1.5vw;
+}
+
+.contact-form {
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-2);
+  border-radius: var(--border-radius);
+}
+
+.contact-form-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  padding: 0 3.5vw;
+  justify-content: center;
+}
+
+/* 
+-----------------------
+Adjust to mobile phones
+-----------------------
+*/
+@media screen and (max-width: 767px) {
+  .rings {
+    grid-template-columns: 1fr 1fr;
+    gap: 3vh 7vw;
+  }
+
+  /* Main */
+  .main-section-title {
+    text-align: center;
+  }
+
+  .main-section h1 {
+    font-size: 2rem;
+  }
+
+  .main-section h2 {
+    text-align: center;
+  }
+
+  .main-section h3 {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
+  .main-section h5 {
+    font-size: 1.3rem;
+  }
+
+  /* Main - Home */
+  #home {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .home-txt-box {
+    width: 100%;
+  }
+
+  .home-img {
+    display: none;
+  }
+
+  #home-btn {
+    gap: 2vw;
+  }
+
+  /* Main - About */
+  #about {
+    gap: 4vh;
+  }
+
+  .about-me {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .about-img-box {
+    width: 100%;
+    height: 30vh;
+  }
+
+  .about-content,
+  .about-content-head,
+  .about-content-txt {
+    width: 100%;
+  }
+
+  .about-content-head {
+    text-align: center;
+  }
+
+  .rings {
+    grid-template-columns: 1fr 1fr;
+    gap: 3vh 7vw;
+  }
+
+  /* Main - Projects */
+  .projects-container {
+    gap: 5vh 6vw;
+  }
+
+  /* Main - Contact */
+  .contact-content {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    gap: 5vh;
+    padding: 0;
+    margin-top: 0;
+  }
+  .contact-txt-box {
+    width: 100%;
+    padding: 0 4vw;
+  }
+  .socials-icons {
+    gap: 4vw;
+  }
+  .contact-form-content {
+    height: 100%;
+    padding: 5vh 3vh;
+  }
+}

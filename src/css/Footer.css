@@ -1,0 +1,72 @@
+.footer-txt {
+  color: var(--white-1);
+  font-size: 1.1rem;
+  font-family: "Genos";
+  text-decoration: none;
+}
+
+.footer-logo {
+  margin-top: 5vh;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+  color: var(--white-1);
+}
+
+.footer-section h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.footer-section p {
+  margin: 0;
+}
+
+.sitemap-links {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 1rem;
+}
+
+.sitemap-link {
+  transition: var(--transition-1);
+}
+
+.sitemap-link:hover {
+  color: var(--green-1);
+  transition: var(--transition-1);
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+  .footer-txt {
+    font-size: 1.05rem;
+  }
+
+  .footer-logo {
+    font-size: 1.15rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer-txt {
+    font-size: 1.1rem;
+  }
+}

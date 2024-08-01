@@ -1,5 +1,6 @@
 import { useState } from "react";
 import NavLinks from "./NavLinks";
+import OtherIcon from "./OtherIcon";
 import "../css/Navigation.css";
 
 function Navigation() {
@@ -16,14 +17,7 @@ function Navigation() {
             Omar Hammoud
           </a>
           <button type="button" className="nav-btn" onClick={showNavPage}>
-            <img
-              className="menu-icon"
-              src="/public/assets/other-icons/burger-bar.webp"
-              alt="menu-icon"
-              draggable="false"
-              loading="lazy"
-            />
-            {/* TODO: make new component for icons */}
+            <OtherIcon className="menu-icon" icon="menu" />
           </button>
         </div>
         <NavLinks className="navbar-links" />

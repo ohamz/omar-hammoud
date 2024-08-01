@@ -1,0 +1,77 @@
+.ring-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ring-txt {
+  text-transform: capitalize;
+  font-size: 1.6rem;
+  margin-top: 3vh;
+}
+
+.progress-ring {
+  position: relative;
+  width: 14vw;
+  height: 14vw;
+  margin: 3vw;
+  margin: var(--ring-border);
+}
+
+.background-circle,
+.foreground-circle {
+  position: absolute;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: var(--ring-border) solid var(--grey-5);
+}
+
+.foreground-circle {
+  border-color: var(--green-1);
+}
+
+#ring-0 {
+  clip-path: polygon(0% 0%, 50% 50%, 0 25%, 0 100%, 100% 100%, 100% 0%);
+}
+#ring-1 {
+  clip-path: polygon(0% 0%, 50% 50%, 0 45%, 0 100%, 100% 100%, 100% 0%);
+}
+#ring-2 {
+  clip-path: polygon(0% 0%, 50% 50%, 0 35%, 0 100%, 100% 100%, 100% 0%);
+}
+#ring-3 {
+  clip-path: polygon(0% 0%, 50% 50%, 0 80%, 0 100%, 100% 100%, 100% 0%);
+}
+
+/* 
+-----------------
+Adjust to tablets
+-----------------
+*/
+@media screen and (max-width: 991px) {
+  /* Main - About - Ring text size */
+  .ring-txt {
+    font-size: 1.2rem;
+  }
+}
+
+/* 
+-----------------------
+Adjust to mobile phones
+-----------------------
+*/
+@media screen and (max-width: 767px) {
+  .progress-ring {
+    width: 14vh;
+    height: 14vh;
+    border-width: var(--ring-border-phone);
+  }
+
+  .background-circle,
+  .foreground-circle {
+    border-width: var(--ring-border-phone);
+  }
+}
