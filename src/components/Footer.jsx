@@ -28,7 +28,7 @@ function Footer() {
           <UserInput type="email" icon="mail">
             Enter your Email address
           </UserInput>
-          <GreenButton>connect</GreenButton>
+          <GreenButton id="newsletter-btn">connect</GreenButton>
         </form>
       </div>
     </footer>

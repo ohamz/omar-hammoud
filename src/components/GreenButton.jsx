@@ -1,9 +1,9 @@
 import React from "react";
 import "../css/GreenButton.css";
 
-function GreenButton({ children }) {
+function GreenButton({ children, id }) {
   return (
-    <button type="submit" className="btn" id="newsletter-btn">
+    <button type="submit" className="btn" id={id}>
       {children}
     </button>
   );

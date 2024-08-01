@@ -149,9 +149,7 @@ function App() {
                   Enter your Email address
                 </UserInput>
                 <UserInput icon="edit">Write Message...</UserInput>
-                <button className="btn" id="contact-btn">
-                  send email
-                </button>
+                <GreenButton id="contact-btn">send email</GreenButton>
               </div>
             </form>
           </div>
