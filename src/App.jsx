@@ -35,15 +35,15 @@ function App() {
           <div className="home-img"></div>
         </section>
         <SectionDivider />
-        <section class="main-section" id="about">
-          <div class="about-me">
-            <div class="about-img-box"></div>
-            <div class="about-content">
-              <div class="about-content-head">
-                <div class="main-section-title">about me</div>
+        <section className="main-section" id="about">
+          <div className="about-me">
+            <div className="about-img-box"></div>
+            <div className="about-content">
+              <div className="about-content-head">
+                <div className="main-section-title">about me</div>
                 <h2>About me in less than a minute</h2>
               </div>
-              <div class="about-content-txt">
+              <div className="about-content-txt">
                 <p>
                   I'm Omar, a British-Lebanese student in the field of Computer
                   Science.
@@ -64,7 +64,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div class="rings">
+          <div className="rings">
             <ProgressRing id="0">programming</ProgressRing>
             <ProgressRing id="1">critical thinking</ProgressRing>
             <ProgressRing id="2">problem solving</ProgressRing>
@@ -72,14 +72,14 @@ function App() {
           </div>
         </section>
         {/* <SectionDivider/>
-      <section class="main-section" id="services">
-        <div class="main-section-title">my services</div>
+      <section className="main-section" id="services">
+        <div className="main-section-title">my services</div>
         </section> */}
         <SectionDivider />
-        <section class="main-section" id="projects">
-          <div class="main-section-title">my projects</div>
+        <section className="main-section" id="projects">
+          <div className="main-section-title">my projects</div>
           <h2>My recent projects</h2>
-          <div class="projects-container">
+          <div className="projects-container">
             <Project title="android mobile app" language="Kotlin" id="0">
               Mobile application that helps you find recipes to cook by
               inputting ingredients, all while following your friends and
@@ -107,22 +107,22 @@ function App() {
           </div>
         </section>
         <SectionDivider />
-        <section class="main-section" id="contact">
-          <div class="main-section-title">contact</div>
+        <section className="main-section" id="contact">
+          <div className="main-section-title">contact</div>
           <h2>Feel free to contact</h2>
-          <div class="contact-content">
-            <div class="contact-txt-box">
+          <div className="contact-content">
+            <div className="contact-txt-box">
               <OtherIcon className="display-icon" icon="arrow" />
-              <div class="contact-txt">
+              <div className="contact-txt">
                 <h5>Let's work together</h5>
                 <p>
                   Send me a message if you like my profile and would like to
                   collaborate!
                 </p>
               </div>
-              <div class="follow-txt">
+              <div className="follow-txt">
                 <h5>Follow me</h5>
-                <div class="socials-icons">
+                <div className="socials-icons">
                   <SocialIcon
                     name="instagram"
                     link="https://www.instagram.com/omarhammouddd/"
@@ -141,15 +141,15 @@ function App() {
                 </div>
               </div>
             </div>
-            <form method="post" class="contact-form" autocomplete="off">
-              <div class="contact-form-content">
+            <form method="post" className="contact-form" autoComplete="off">
+              <div className="contact-form-content">
                 <h3>Get in touch</h3>
                 <UserInput icon="profile">Enter your full name</UserInput>
                 <UserInput type="email" icon="mail">
                   Enter your Email address
                 </UserInput>
                 <UserInput icon="edit">Write Message...</UserInput>
-                <button class="btn" id="contact-btn">
+                <button className="btn" id="contact-btn">
                   send email
                 </button>
               </div>

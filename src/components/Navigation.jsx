@@ -38,7 +38,7 @@ function Navigation() {
             />
           </button>
         </div>
-        <NavLinks className="navpage-links" />
+        <NavLinks className="navpage-links" onLinkClick={hideNavPage} />
       </nav>
     </>
   );

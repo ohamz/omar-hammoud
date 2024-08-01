@@ -1,6 +1,6 @@
 import "../css/NavLinks.css";
 
-function NavLinks({ className, isFooter = false }) {
+function NavLinks({ className, isFooter = false, onLinkClick = () => {} }) {
   const onDownloadCV = () => {
     window.open("/assets/Omar's CV.pdf", "_blank");
   };
@@ -11,6 +11,7 @@ function NavLinks({ className, isFooter = false }) {
         title="home-link"
         href="#home"
         className={isFooter ? "sitemap-link footer-txt" : "link web-link"}
+        onClick={onLinkClick}
       >
         home
       </a>
@@ -18,6 +19,7 @@ function NavLinks({ className, isFooter = false }) {
         title="about-link"
         href="#about"
         className={isFooter ? "sitemap-link footer-txt" : "link web-link"}
+        onClick={onLinkClick}
       >
         about
       </a>
@@ -26,6 +28,7 @@ function NavLinks({ className, isFooter = false }) {
         title="projects-link"
         href="#projects"
         className={isFooter ? "sitemap-link footer-txt" : "link web-link"}
+        onClick={onLinkClick}
       >
         projects
       </a>
@@ -33,6 +36,7 @@ function NavLinks({ className, isFooter = false }) {
         title="contact-link"
         href="#contact"
         className={isFooter ? "sitemap-link footer-txt" : "link web-link"}
+        onClick={onLinkClick}
       >
         contact
       </a>

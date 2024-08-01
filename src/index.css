@@ -92,6 +92,10 @@ Adjust to tablets
 -----------------
 */
 @media screen and (max-width: 991px) {
+  ::placeholder {
+    font-size: 1.1rem;
+  }
+
   p {
     font-size: 1.05rem;
   }

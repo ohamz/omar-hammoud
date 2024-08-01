@@ -24,7 +24,7 @@ function Footer() {
       </div>
       <div className="footer-section">
         <h3>newsletter</h3>
-        <form className="newsletter-form" autocomplete="off">
+        <form className="newsletter-form" autoComplete="off">
           <UserInput type="email" icon="mail">
             Enter your Email address
           </UserInput>
