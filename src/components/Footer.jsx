@@ -4,6 +4,9 @@ import NavLinks from "./NavLinks";
 import SocialLinks from "./SocialLinks";
 import "../css/Footer.css";
 
+/**
+ * Footer component for displaying footer information
+ */
 function Footer() {
   return (
     <footer>

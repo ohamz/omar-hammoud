@@ -1,7 +1,11 @@
 import React from "react";
 import "../css/SectionDivider.css";
 
-function SectionDivider() {
+/**
+ * SectionDivider component for separating sections
+ */
+function SectionDivider({ showDivider = true }) {
+  if (!showDivider) return null;
   return <div className="main-section-separator"></div>;
 }
 

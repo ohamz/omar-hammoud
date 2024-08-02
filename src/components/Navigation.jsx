@@ -3,6 +3,9 @@ import NavLinks from "./NavLinks";
 import OtherIcon from "./OtherIcon";
 import "../css/Navigation.css";
 
+/**
+ * Navigation component for displaying the navigation bar
+ */
 function Navigation() {
   const [navPageVisible, setShowNavPage] = useState(false);
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
 import emailjs from "@emailjs/browser";
@@ -6,7 +6,19 @@ import emailjs from "@emailjs/browser";
 import UserInput from "./UserInput";
 import GreenButton from "./GreenButton";
 
+/**
+ * ContactForm component - form for sending emails
+ */
 function ContactForm() {
+  const S_ID = import.meta.env.VITE_SERVICE_ID;
+  const T_ID = import.meta.env.VITE_TEMPLATE_ID;
+  const PUB_KEY = import.meta.env.VITE_PUBLIC_KEY;
+
+  const [isLoading, setLoading] = useState(false);
+  const [btnDisplay, setBtnDisplay] = useState({
+    content: "send email",
+    color: "",
+  });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,24 +37,30 @@ function ContactForm() {
     setFormData({ name: "", email: "", message: "" });
   };
 
-  const handleSubmit = (e) => {
+  const confirmSubmission = () => {
+    setBtnDisplay({ content: "email sent!", color: "btn-white" });
+    setTimeout(() => {
+      setBtnDisplay({ content: "send email", color: "" });
+    }, 2000);
+  };
+
+  const handleSubmit = async (e) => {
+    const tempForm = formData;
+    clearForm();
     e.preventDefault();
-    emailjs
-      .send(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
-        formData,
-        {
-          publicKey: import.meta.env.VITE_PUBLIC_KEY,
-        }
-      )
-      .then((response) => {
-        console.log("SUCCESS!", response.status, response.text);
-        clearForm();
-      })
-      .catch((error) => {
-        console.log("FAILED...", error);
+    setLoading(true);
+
+    try {
+      const response = await emailjs.send(S_ID, T_ID, tempForm, {
+        publicKey: PUB_KEY,
       });
+      setLoading(false);
+      confirmSubmission();
+      console.log("SUCCESS!", response.status, response.text);
+    } catch (error) {
+      setLoading(false);
+      console.log("FAILED...", error);
+    }
   };
 
   return (
@@ -79,7 +97,13 @@ function ContactForm() {
         >
           Write Message...
         </UserInput>
-        <GreenButton id="contact-btn">send email</GreenButton>
+        <GreenButton
+          id="contact-btn"
+          btnTxtColor={btnDisplay.color}
+          isLoading={isLoading}
+        >
+          {btnDisplay.content}
+        </GreenButton>
       </div>
     </form>
   );

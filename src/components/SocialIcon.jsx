@@ -1,6 +1,14 @@
 import React from "react";
 import "../css/SocialIcon.css";
 
+/**
+ * SocialIcon component for displaying social media icons
+ *
+ * @param {Object} props
+ * @param {String} props.name
+ * @param {String} props.link
+ * @param {String} props.icon
+ */
 function SocialIcon({ name, link, icon }) {
   return (
     <a

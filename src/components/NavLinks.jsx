@@ -1,5 +1,13 @@
 import "../css/NavLinks.css";
 
+/**
+ * NavLinks component for displaying navigation links
+ *
+ * @param {Object} props
+ * @param {String} props.className
+ * @param {Boolean} props.isFooter
+ * @param {Function} props.onLinkClick
+ */
 function NavLinks({ className, isFooter = false, onLinkClick = () => {} }) {
   const onDownloadCV = () => {
     window.open("/assets/Omar's CV.pdf", "_blank");

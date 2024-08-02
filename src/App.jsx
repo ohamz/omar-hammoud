@@ -8,6 +8,9 @@ import ContactForm from "./components/ContactForm";
 import SocialLinks from "./components/SocialLinks";
 import OtherIcon from "./components/OtherIcon";
 
+/**
+ * App component - main component
+ */
 function App() {
   return (
     <>
@@ -34,7 +37,7 @@ function App() {
           </div>
           <div className="home-img"></div>
         </section>
-        <SectionDivider />
+        <SectionDivider showDivider={false} />
         <section className="main-section" id="about">
           <div className="about-me">
             <div className="about-img-box"></div>

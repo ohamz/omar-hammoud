@@ -1,4 +1,8 @@
 .btn {
+  height: 12%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--green-1);
   color: var(--black-2);
   font-size: 0.9rem;
@@ -10,9 +14,32 @@
   transition: var(--transition-1);
 }
 
+.btn-white {
+  color: var(--white-1);
+}
+
 .btn:hover {
   background: var(--green-2);
   transition: var(--transition-1);
+}
+
+.loader {
+  border: 6px solid var(--grey-1);
+  border-top: 6px solid var(--black-2);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  animation: spin 1.2s linear infinite;
+  /* transition: var(--transition-1); */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (max-width: 991px) {

@@ -1,6 +1,13 @@
 import React from "react";
 import "../css/ProgressRing.css";
 
+/**
+ * ProgressRing component for displaying progress rings
+ *
+ * @param {Object} props
+ * @param {String} props.children
+ * @param {String} props.id
+ */
 function ProgressRing({ children, id }) {
   return (
     <div className="ring-box">

@@ -1,6 +1,13 @@
 import React from "react";
 import "../css/OtherIcon.css";
 
+/**
+ * OtherIcon component for displaying other icons
+ *
+ * @param {Object} props
+ * @param {String} props.className
+ * @param {String} props.icon
+ */
 function OtherIcon({ className, icon }) {
   return (
     <img

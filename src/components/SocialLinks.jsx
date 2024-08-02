@@ -3,6 +3,12 @@ import React from "react";
 import SocialIcon from "./SocialIcon";
 import "../css/SocialLinks.css";
 
+/**
+ * SocialLinks component for displaying social media icons
+ *
+ * @param {Object} props
+ * @param {Boolean} props.isFooter
+ */
 function SocialLinks({ isFooter = false }) {
   return (
     <div className={isFooter ? "footer-social-icons" : "socials-icons"}>
