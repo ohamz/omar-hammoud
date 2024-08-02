@@ -367,3 +367,65 @@ Adjust to mobile phones
     padding: 5vh 3vh;
   }
 }
+
+/* 
+-------------------------
+Adjust to big desktops
+-------------------------
+*/
+@media screen and (min-width: 1500px) {
+  /* Main */
+  .main-section-title {
+    font-size: 1.5rem;
+  }
+  .home-intro {
+    font-size: 2.6rem;
+  }
+  .main-section h1 {
+    font-size: 3.6rem;
+  }
+  .main-section h2 {
+    font-size: 2.6rem;
+  }
+  .main-section h3 {
+    font-size: 2.4rem;
+  }
+  .main-section h5 {
+    font-size: 1.7rem;
+  }
+
+  #home-btn {
+    font-size: 1.4rem;
+  }
+}
+
+/* 
+-------------------------
+Adjust to bigger desktops
+-------------------------
+*/
+@media screen and (min-width: 1900px) {
+  /* Main */
+  .main-section-title {
+    font-size: 1.9rem;
+  }
+  .home-intro {
+    font-size: 3rem;
+  }
+  .main-section h1 {
+    font-size: 4rem;
+  }
+  .main-section h2 {
+    font-size: 3rem;
+  }
+  .main-section h3 {
+    font-size: 2.8rem;
+  }
+  .main-section h5 {
+    font-size: 2.1rem;
+  }
+
+  #home-btn {
+    font-size: 1.9rem;
+  }
+}

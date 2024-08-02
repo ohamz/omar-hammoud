@@ -121,3 +121,33 @@ Adjust to mobile phones
     gap: 5vh;
   }
 }
+
+/* 
+-------------------------
+Adjust to big desktops
+-------------------------
+*/
+@media screen and (min-width: 1500px) {
+  ::placeholder {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+}
+
+/* 
+-------------------------
+Adjust to bigger desktops
+-------------------------
+*/
+@media screen and (min-width: 1900px) {
+  ::placeholder {
+    font-size: 2.1rem;
+  }
+
+  p {
+    font-size: 1.9rem;
+  }
+}

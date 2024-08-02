@@ -24,13 +24,6 @@ function Footer() {
       <div className="footer-section">
         <h3>follow me</h3>
         <SocialLinks isFooter={true} />
-        {/* <h3>newsletter</h3>
-        <form className="newsletter-form" autoComplete="off">
-          <UserInput type="email" icon="mail">
-            Enter your Email address
-          </UserInput>
-          <GreenButton id="newsletter-btn">connect</GreenButton>
-        </form> */}
       </div>
     </footer>
   );

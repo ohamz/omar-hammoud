@@ -56,10 +56,6 @@
     font-size: 1.05rem;
   }
 
-  .footer-logo {
-    font-size: 1.15rem;
-  }
-
   .footer-section h3 {
     font-size: 1rem;
   }
@@ -68,5 +64,35 @@
 @media screen and (max-width: 767px) {
   .footer-txt {
     font-size: 1.1rem;
+  }
+}
+
+/* 
+-------------------------
+Adjust to big desktops
+-------------------------
+*/
+@media screen and (min-width: 1500px) {
+  .footer-txt {
+    font-size: 1.4rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1.4rem;
+  }
+}
+
+/* 
+-------------------------
+Adjust to bigger desktops
+-------------------------
+*/
+@media screen and (min-width: 1900px) {
+  .footer-txt {
+    font-size: 1.8rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1.8rem;
   }
 }

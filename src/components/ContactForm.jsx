@@ -46,7 +46,12 @@ function ContactForm() {
   };
 
   return (
-    <form className="contact-form" autoComplete="off" onSubmit={handleSubmit}>
+    <form
+      id="contact-form"
+      className="contact-form"
+      autoComplete="off"
+      onSubmit={handleSubmit}
+    >
       <div className="contact-form-content">
         <h3>Get in touch</h3>
         <UserInput

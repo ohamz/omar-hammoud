@@ -4,7 +4,7 @@ import "../css/OtherIcon.css";
 function OtherIcon({ className, icon }) {
   return (
     <img
-      src={"./assets/other-icons/" + icon + ".webp"}
+      src={"/assets/other-icons/" + icon + ".webp"}
       alt={icon + "-icon"}
       className={className}
       draggable="false"

@@ -1,6 +1,6 @@
 .logo {
   color: var(--green-1);
-  font-size: var(--font-size-4);
+  font-size: 1.5rem;
   padding: 1vw;
   border-radius: var(--border-radius);
   text-decoration: none;
@@ -112,11 +112,24 @@
   }
 }
 
-.menu-icon {
-  width: 70%;
-  height: 70%;
+/* 
+-------------------------
+Adjust to big desktops
+-------------------------
+*/
+@media screen and (min-width: 1500px) {
+  .logo {
+    font-size: 1.6rem;
+  }
 }
-.close-icon {
-  width: 60%;
-  height: 60%;
+
+/* 
+-------------------------
+Adjust to bigger desktops
+-------------------------
+*/
+@media screen and (min-width: 1900px) {
+  .logo {
+    font-size: 2rem;
+  }
 }

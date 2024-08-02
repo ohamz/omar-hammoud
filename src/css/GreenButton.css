@@ -21,3 +21,27 @@
     font-size: 0.85rem;
   }
 }
+
+/* 
+-------------------------
+Adjust to big desktops
+-------------------------
+*/
+@media screen and (min-width: 1500px) {
+  /* Buttons */
+  .btn {
+    font-size: 1.05rem;
+  }
+}
+
+/* 
+-------------------------
+Adjust to bigger desktops
+-------------------------
+*/
+@media screen and (min-width: 1900px) {
+  /* Buttons */
+  .btn {
+    font-size: 1.25rem;
+  }
+}

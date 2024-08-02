@@ -155,3 +155,35 @@ Adjust to tablets
     font-size: 1.1rem;
   }
 }
+
+/* 
+-------------------------
+Adjust to big desktops
+-------------------------
+*/
+@media screen and (min-width: 1500px) {
+  .project-txt-title {
+    font-size: 1.8rem;
+  }
+
+  .project-txt-content,
+  .project-txt-footer {
+    font-size: 1.4rem;
+  }
+}
+
+/* 
+-------------------------
+Adjust to bigger desktops
+-------------------------
+*/
+@media screen and (min-width: 1900px) {
+  .project-txt-title {
+    font-size: 2.4rem;
+  }
+
+  .project-txt-content,
+  .project-txt-footer {
+    font-size: 1.9rem;
+  }
+}

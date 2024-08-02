@@ -52,3 +52,25 @@
   left: 0;
   transition: var(--transition-1);
 }
+
+/* 
+-------------------------
+Adjust to big desktops
+-------------------------
+*/
+@media screen and (min-width: 1500px) {
+  .link {
+    font-size: 1.1rem;
+  }
+}
+
+/* 
+-------------------------
+Adjust to bigger desktops
+-------------------------
+*/
+@media screen and (min-width: 1900px) {
+  .link {
+    font-size: 1.5rem;
+  }
+}

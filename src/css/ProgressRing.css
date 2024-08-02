@@ -7,7 +7,7 @@
 
 .ring-txt {
   text-transform: capitalize;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   margin-top: 3vh;
 }
 
@@ -73,5 +73,29 @@ Adjust to mobile phones
   .background-circle,
   .foreground-circle {
     border-width: var(--ring-border-phone);
+  }
+}
+
+/* 
+-------------------------
+Adjust to big desktops
+-------------------------
+*/
+@media screen and (min-width: 1500px) {
+  /* Main - About - Ring text size */
+  .ring-txt {
+    font-size: 1.8rem;
+  }
+}
+
+/* 
+-------------------------
+Adjust to bigger desktops
+-------------------------
+*/
+@media screen and (min-width: 1900px) {
+  /* Main - About - Ring text size */
+  .ring-txt {
+    font-size: 2.2rem;
   }
 }
