@@ -1,10 +1,10 @@
 import "./App.css";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
-import UserInput from "./components/UserInput";
 import SectionDivider from "./components/SectionDivider";
 import ProgressRing from "./components/ProgressRing";
 import Project from "./components/Project";
+import ContactForm from "./components/ContactForm";
 import SocialIcon from "./components/SocialIcon";
 import OtherIcon from "./components/OtherIcon";
 
@@ -141,17 +141,7 @@ function App() {
                 </div>
               </div>
             </div>
-            <form method="post" className="contact-form" autoComplete="off">
-              <div className="contact-form-content">
-                <h3>Get in touch</h3>
-                <UserInput icon="profile">Enter your full name</UserInput>
-                <UserInput type="email" icon="mail">
-                  Enter your Email address
-                </UserInput>
-                <UserInput icon="edit">Write Message...</UserInput>
-                <GreenButton id="contact-btn">send email</GreenButton>
-              </div>
-            </form>
+            <ContactForm />
           </div>
         </section>
       </main>
