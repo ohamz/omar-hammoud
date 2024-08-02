@@ -1,8 +1,7 @@
 import React from "react";
 
 import NavLinks from "./NavLinks";
-import UserInput from "./UserInput";
-import GreenButton from "./GreenButton";
+import SocialLinks from "./SocialLinks";
 import "../css/Footer.css";
 
 function Footer() {
@@ -23,13 +22,15 @@ function Footer() {
         <p className="footer-txt">phone: +41 78 206 30 53</p>
       </div>
       <div className="footer-section">
-        <h3>newsletter</h3>
+        <h3>follow me</h3>
+        <SocialLinks isFooter={true} />
+        {/* <h3>newsletter</h3>
         <form className="newsletter-form" autoComplete="off">
           <UserInput type="email" icon="mail">
             Enter your Email address
           </UserInput>
           <GreenButton id="newsletter-btn">connect</GreenButton>
-        </form>
+        </form> */}
       </div>
     </footer>
   );

@@ -1,0 +1,30 @@
+.socials-icons {
+  display: flex;
+  gap: 1vw;
+}
+
+.footer-social-icons {
+  height: 23vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1vh 2vh;
+}
+
+/* 
+-----------------------
+Adjust to mobile phones
+-----------------------
+*/
+@media screen and (max-width: 767px) {
+  .socials-icons {
+    gap: 2vw;
+  }
+
+  .footer-social-icons {
+    height: auto;
+    flex-direction: row;
+    gap: 2vw;
+    padding-bottom: 2vh;
+  }
+}

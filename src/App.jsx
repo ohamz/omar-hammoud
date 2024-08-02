@@ -5,7 +5,7 @@ import SectionDivider from "./components/SectionDivider";
 import ProgressRing from "./components/ProgressRing";
 import Project from "./components/Project";
 import ContactForm from "./components/ContactForm";
-import SocialIcon from "./components/SocialIcon";
+import SocialLinks from "./components/SocialLinks";
 import OtherIcon from "./components/OtherIcon";
 
 function App() {
@@ -71,10 +71,6 @@ function App() {
             <ProgressRing id="3">web/app developement</ProgressRing>
           </div>
         </section>
-        {/* <SectionDivider/>
-      <section className="main-section" id="services">
-        <div className="main-section-title">my services</div>
-        </section> */}
         <SectionDivider />
         <section className="main-section" id="projects">
           <div className="main-section-title">my projects</div>
@@ -122,23 +118,7 @@ function App() {
               </div>
               <div className="follow-txt">
                 <h5>Follow me</h5>
-                <div className="socials-icons">
-                  <SocialIcon
-                    name="instagram"
-                    link="https://www.instagram.com/omarhammouddd/"
-                    icon="/assets/socials-icons/instagram.webp"
-                  />
-                  <SocialIcon
-                    name="linkedin"
-                    link="https://www.linkedin.com/in/omar-hammoud-804675206/"
-                    icon="/assets/socials-icons/linkedin.webp"
-                  />
-                  <SocialIcon
-                    name="github"
-                    link="https://github.com/ohamz"
-                    icon="/assets/socials-icons/github-mark.webp"
-                  />
-                </div>
+                <SocialLinks />
               </div>
             </div>
             <ContactForm />

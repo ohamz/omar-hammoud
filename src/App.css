@@ -202,11 +202,6 @@ Main - Contact
   gap: 3vh;
 }
 
-.socials-icons {
-  display: flex;
-  gap: 1.5vw;
-}
-
 .contact-form {
   width: 100%;
   height: 100%;

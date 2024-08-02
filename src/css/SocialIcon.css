@@ -1,6 +1,6 @@
 .social-icon {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   background-color: var(--white-2);
   border-radius: 40%;
   border: 0;
@@ -8,7 +8,11 @@
 }
 
 .social-icon:hover {
-  background-color: var(--grey-2);
+  background-color: var(--grey-4);
+}
+
+#instagram-icon {
+  padding: 0;
 }
 
 #github-icon:hover {
@@ -16,6 +20,18 @@
   background-color: var(--grey-1);
 }
 
+#discord-icon {
+  padding: 6px 4px;
+}
+
+#discord-icon:hover {
+  content: url("/assets/socials-icons/discord-mark-white.webp");
+  background-color: var(--grey-1);
+}
+
+#telegram-icon {
+  padding: 2px;
+}
 /* 
 -----------------------
 Adjust to mobile phones
@@ -23,7 +39,7 @@ Adjust to mobile phones
 */
 @media screen and (max-width: 767px) {
   .social-icon {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
   }
 }
