@@ -7,10 +7,13 @@ import "../css/Navigation.css";
  * Navigation component for displaying the navigation bar
  */
 function Navigation(visibleLink) {
-  const [navPageVisible, setShowNavPage] = useState(false);
-
-  const showNavPage = () => setShowNavPage(true);
-  const hideNavPage = () => setShowNavPage(false);
+  const [navPageVisible, setOpen] = useState(false);
+  const handleBurgerClick = () => {
+    setOpen(!navPageVisible);
+  };
+  const hideNavPage = () => {
+    setOpen(false);
+  };
 
   return (
     <>
@@ -19,14 +22,24 @@ function Navigation(visibleLink) {
           <a title="navbar-logo" href="index.html" className="logo navbar-logo">
             Omar Hammoud
           </a>
-          <button type="button" className="nav-btn" onClick={showNavPage}>
+          <div className="burger-menu-box">
+            <div
+              className={"burger-menu" + (navPageVisible ? " open" : "")}
+              onClick={handleBurgerClick}
+            >
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          {/* <button type="button" className="nav-btn" onClick={showNavPage}>
             <OtherIcon className="menu-icon" icon="menu" />
-          </button>
+          </button> */}
         </div>
         <NavLinks className="navbar" visibleLink={visibleLink} />
       </nav>
       <nav className={"navpage" + (navPageVisible ? " show-navpage" : "")}>
-        <div className="navpage-btn-box">
+        {/* <div className="navpage-btn-box">
           <button
             type="button"
             className="nav-btn navpage-btn"
@@ -40,7 +53,7 @@ function Navigation(visibleLink) {
               loading="lazy"
             />
           </button>
-        </div>
+        </div> */}
         <NavLinks
           className="navpage"
           visibleLink={visibleLink}

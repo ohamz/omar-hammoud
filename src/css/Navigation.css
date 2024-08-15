@@ -6,7 +6,7 @@
   text-decoration: none;
 }
 
-.nav-btn {
+/* .nav-btn {
   width: 42px;
   height: 40px;
   border-radius: var(--border-radius);
@@ -16,7 +16,7 @@
   padding: 0;
   border: 0;
   background-color: var(--green-1);
-}
+} */
 
 .navbar {
   position: sticky;
@@ -30,7 +30,7 @@
   border-bottom: 1px solid var(--grey-1);
   background-color: var(--black-3);
   overflow: hidden;
-  z-index: 990;
+  z-index: 999;
 }
 
 .navbar-header {
@@ -57,11 +57,11 @@
   background-color: var(--black-2);
   transform: translateX(-100vw);
   overflow: hidden;
-  z-index: 999;
+  z-index: 990;
   transition: var(--transition-3);
 }
 
-.navpage-btn-box {
+/* .navpage-btn-box {
   width: 100%;
   display: flex;
   justify-content: end;
@@ -74,26 +74,58 @@
   height: 40px;
   margin-top: 8vh;
   margin-bottom: 10vh;
-}
-
-.navpage-links {
-  width: 100%;
-  height: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  padding: 5vw;
-  gap: 1vh;
-}
-
-.navpage-links .link {
-  font-size: 1rem;
-}
+} */
 
 .show-navpage {
   transform: translateX(0);
   transition: var(--transition-3);
+}
+
+.burger-menu-box {
+  padding: 3%;
+  border-radius: var(--border-radius);
+  background-color: var(--green-1);
+  margin-right: 5%;
+}
+
+.burger-menu {
+  position: relative;
+  display: none;
+  width: 30px;
+  height: 20px;
+}
+
+.burger-menu div {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: var(--black-2);
+  border-radius: var(--border-radius);
+  transition: var(--transition-3);
+}
+
+.burger-menu.open div {
+  transition: var(--transition-3);
+}
+.burger-menu div:nth-child(1) {
+  top: 0;
+}
+.burger-menu div:nth-child(2) {
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.burger-menu div:nth-child(3) {
+  bottom: 0;
+}
+
+.burger-menu.open div:nth-child(1) {
+  transform: rotate(-45deg) translate(-20%, 200%);
+}
+.burger-menu.open div:nth-child(2) {
+  opacity: 0;
+}
+.burger-menu.open div:nth-child(3) {
+  transform: rotate(45deg) translate(-20%, -200%);
 }
 
 @media screen and (max-width: 767px) {
@@ -107,8 +139,12 @@
   .navbar-links {
     display: none;
   }
-  .nav-btn {
+  /* .nav-btn {
     display: flex;
+  } */
+
+  .burger-menu {
+    display: block;
   }
 }
 

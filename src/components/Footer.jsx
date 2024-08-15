@@ -21,7 +21,7 @@ function Footer() {
       </div>
       <div className="footer-section">
         <h3>contact info</h3>
-        <p className="footer-txt">lausanne, switzerland</p>
+        <p className="footer-txt">zurich, switzerland</p>
         <p className="footer-txt">phone: +41 78 206 30 53</p>
       </div>
       <div className="footer-section">
