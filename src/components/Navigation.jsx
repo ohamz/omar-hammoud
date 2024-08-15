@@ -6,7 +6,7 @@ import "../css/Navigation.css";
 /**
  * Navigation component for displaying the navigation bar
  */
-function Navigation() {
+function Navigation(visibleLink) {
   const [navPageVisible, setShowNavPage] = useState(false);
 
   const showNavPage = () => setShowNavPage(true);
@@ -23,7 +23,7 @@ function Navigation() {
             <OtherIcon className="menu-icon" icon="menu" />
           </button>
         </div>
-        <NavLinks className="navbar-links" />
+        <NavLinks className="navbar" visibleLink={visibleLink} />
       </nav>
       <nav className={"navpage" + (navPageVisible ? " show-navpage" : "")}>
         <div className="navpage-btn-box">
@@ -41,7 +41,11 @@ function Navigation() {
             />
           </button>
         </div>
-        <NavLinks className="navpage-links" onLinkClick={hideNavPage} />
+        <NavLinks
+          className="navpage"
+          visibleLink={visibleLink}
+          onLinkClick={hideNavPage}
+        />
       </nav>
     </>
   );

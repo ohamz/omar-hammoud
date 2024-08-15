@@ -41,12 +41,14 @@
   transition: var(--transition-1);
 }
 
+.web-link-active,
 .web-link:hover {
   color: var(--green-1);
   padding-bottom: 0;
   transition: var(--transition-1);
 }
 
+.web-link-active::before,
 .web-link:hover:before {
   width: 100%;
   left: 0;

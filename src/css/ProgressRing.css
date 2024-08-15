@@ -17,6 +17,7 @@
   height: 14vw;
   margin: 3vw;
   margin: var(--ring-border);
+  transition: var(--transition-2);
 }
 
 .background-circle,
@@ -44,6 +45,11 @@
 }
 #ring-3 {
   clip-path: polygon(0% 0%, 50% 50%, 0 80%, 0 100%, 100% 100%, 100% 0%);
+}
+
+.progress-ring:hover {
+  transform: rotate(360deg) scale(1.2);
+  transition: var(--transition-2);
 }
 
 /* 

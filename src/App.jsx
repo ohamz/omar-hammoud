@@ -8,20 +8,45 @@ import ContactForm from "./components/ContactForm";
 import SocialLinks from "./components/SocialLinks";
 import OtherIcon from "./components/OtherIcon";
 
+import { useState, useRef, useEffect } from "react";
+import { links } from "./constants/data";
+
 /**
  * App component - main component
  */
 function App() {
+  const [visibleLink, setVisibleLink] = useState(links[0].id);
+
+  // Dynamic active links logic
+  const ref = useRef([]);
+  useEffect(() => {
+    // console.log(visibleLink);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleLink(entry.target.getAttribute("id"));
+          }
+        });
+      },
+      { threshold: [0.5, 1] }
+    );
+    ref.current.forEach((r) => observer.observe(r));
+  }, [ref]);
+
+  const refCallback = (el) => ref.current.push(el);
+
   return (
     <>
-      <Navigation />
+      <Navigation visibleLink={visibleLink} />
       <main>
-        <section className="main-section" id="home">
+        <section ref={refCallback} className="main-section" id="home">
           <div className="home-txt-box">
             <div className="home-intro">hey there!</div>
             <h1>
               I'm Omar,
-              <span className="green-title"> Computer Science student</span>
+              <span className="green-title"> Software Developer</span>
             </h1>
             <p>
               Computer Science student passionate about this field of study. I
@@ -38,7 +63,7 @@ function App() {
           <div className="home-img"></div>
         </section>
         <SectionDivider showDivider={false} />
-        <section className="main-section" id="about">
+        <section ref={refCallback} className="main-section" id="about">
           <div className="about-me">
             <div className="about-img-box"></div>
             <div className="about-content">
@@ -75,7 +100,7 @@ function App() {
           </div>
         </section>
         <SectionDivider />
-        <section className="main-section" id="projects">
+        <section ref={refCallback} className="main-section" id="projects">
           <div className="main-section-title">my projects</div>
           <h2>My recent projects</h2>
           <div className="projects-container">
@@ -106,7 +131,7 @@ function App() {
           </div>
         </section>
         <SectionDivider />
-        <section className="main-section" id="contact">
+        <section ref={refCallback} className="main-section" id="contact">
           <div className="main-section-title">contact</div>
           <h2>Feel free to contact</h2>
           <div className="contact-content">

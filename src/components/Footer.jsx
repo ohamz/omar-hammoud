@@ -17,7 +17,7 @@ function Footer() {
       </div>
       <div className="footer-section">
         <h3>sitemap</h3>
-        <NavLinks className="sitemap-links" isFooter={true} />
+        <NavLinks className="sitemap" isFooter={true} />
       </div>
       <div className="footer-section">
         <h3>contact info</h3>
