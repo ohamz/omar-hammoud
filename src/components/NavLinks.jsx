@@ -17,7 +17,7 @@ function NavLinks({
   onLinkClick = () => {},
 }) {
   const onDownloadCV = () => {
-    window.open("/assets/Omar's CV.pdf", "_blank");
+    window.open("/assets/Omar_CV.pdf", "_blank");
   };
 
   return (

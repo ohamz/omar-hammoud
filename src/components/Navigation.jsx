@@ -32,33 +32,11 @@ function Navigation(visibleLink) {
               <div></div>
             </div>
           </div>
-          {/* <button type="button" className="nav-btn" onClick={showNavPage}>
-            <OtherIcon className="menu-icon" icon="menu" />
-          </button> */}
         </div>
         <NavLinks className="navbar" visibleLink={visibleLink} />
       </nav>
       <nav className={"navpage" + (navPageVisible ? " show-navpage" : "")}>
-        {/* <div className="navpage-btn-box">
-          <button
-            type="button"
-            className="nav-btn navpage-btn"
-            onClick={hideNavPage}
-          >
-            <img
-              className="close-icon"
-              src="./assets/other-icons/close.webp"
-              alt="close-icon"
-              draggable="false"
-              loading="lazy"
-            />
-          </button>
-        </div> */}
-        <NavLinks
-          className="navpage"
-          visibleLink={visibleLink}
-          onLinkClick={hideNavPage}
-        />
+        <NavLinks className="navpage" onLinkClick={hideNavPage} />
       </nav>
     </>
   );
