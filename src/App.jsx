@@ -109,7 +109,7 @@ function App() {
               inputting ingredients, all while following your friends and
               sharing your recipes with them.
             </Project>
-            <Project title="bicycle pahfinder" language="Java" id="1">
+            <Project title="bicycle pathfinder" language="Java" id="1">
               Advanced pathfinder for bicycles all over Switzerland’s area. It
               gives the most efficient route between two or more pinpoints by
               considering the distance, elevation and bird’s eye view.
