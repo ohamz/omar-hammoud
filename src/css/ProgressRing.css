@@ -47,7 +47,7 @@
   clip-path: polygon(0% 0%, 50% 50%, 0 80%, 0 100%, 100% 100%, 100% 0%);
 }
 
-.progress-ring:hover {
+.ring-box:hover > .progress-ring {
   transform: rotate(360deg) scale(1.2);
   transition: var(--transition-2);
 }

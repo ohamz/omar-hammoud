@@ -20,8 +20,6 @@ function App() {
   // Dynamic active links logic
   const ref = useRef([]);
   useEffect(() => {
-    // console.log(visibleLink);
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -77,10 +75,10 @@ function App() {
                   Science.
                 </p>
                 <p>
-                  Studying abroad, I got my BSc in Computer Science at the Swiss
-                  Federal Institute of Technology Lausanne (EPFL). These 3 years
-                  helped me develop countless skills both work and management
-                  related.
+                  Studying abroad, I got my BSc in Computer Science at EPFL in
+                  Lausanne, and I'm currently pursuing my MSc in the same field,
+                  majoring in Data Management Systems at the Swiss Federal
+                  Institute of Technology (ETH Zurich).
                 </p>
                 <p>
                   My journey has been a blend of academic training and making
@@ -108,6 +106,16 @@ function App() {
               Mobile application that helps you find recipes to cook by
               inputting ingredients, all while following your friends and
               sharing your recipes with them.
+            </Project>
+            <Project title="liking nodes" language="JavaScript, Python" id="5">
+              Web application with an interactive graph-based frontend where
+              users can add and like nodes. Handles database interactions, and
+              enables real-time local updates across active sessions.
+            </Project>
+            <Project title="ACME protocol" language="Java" id="6">
+              A remake of the ACME certificate protocol, managing the process of
+              certificate issuance and revocation. It includes multiple servers
+              for handling challenges and certificate requests.
             </Project>
             <Project title="bicycle pathfinder" language="Java" id="1">
               Advanced pathfinder for bicycles all over Switzerland’s area. It

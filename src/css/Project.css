@@ -81,6 +81,15 @@
   background: url("../assets/projects-icons/cat.webp") center/cover no-repeat;
 }
 
+#project-5 {
+  background: url("../assets/projects-icons/nodes.webp") center/cover no-repeat;
+}
+
+#project-6 {
+  background: url("../assets/projects-icons/certificate.webp") center/cover
+    no-repeat;
+}
+
 /* 
 -----------------------
 Adjust to small laptops
