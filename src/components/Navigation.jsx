@@ -6,7 +6,7 @@ import "../css/Navigation.css";
 /**
  * Navigation component for displaying the navigation bar
  */
-function Navigation(visibleLink) {
+function Navigation({ visibleLink }) {
   const [navPageVisible, setOpen] = useState(false);
   const handleBurgerClick = () => {
     setOpen(!navPageVisible);

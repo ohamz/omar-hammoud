@@ -28,7 +28,7 @@ function NavLinks({
           title={e.id + "-link"}
           href={"#" + e.id}
           className={
-            (visibleLink && visibleLink.visibleLink === e.id
+            (visibleLink === e.id
               ? "web-link-active "
               : "") + (isFooter ? "sitemap-link footer-txt" : "link web-link")
           }

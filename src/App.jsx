@@ -28,12 +28,26 @@ function App() {
           }
         });
       },
-      { threshold: [0.5, 1] }
+      { threshold: [0.3, 0.7] }
     );
-    ref.current.forEach((r) => observer.observe(r));
-  }, [ref]);
+    
+    // Clear and re-observe
+    ref.current.forEach((r) => {
+      if (r) observer.observe(r);
+    });
+    
+    return () => {
+      ref.current.forEach((r) => {
+        if (r) observer.unobserve(r);
+      });
+    };
+  }, []);
 
-  const refCallback = (el) => ref.current.push(el);
+  const refCallback = (el) => {
+    if (el && !ref.current.includes(el)) {
+      ref.current.push(el);
+    }
+  };
 
   return (
     <>
@@ -75,17 +89,17 @@ function App() {
                   Science.
                 </p>
                 <p>
-                  Studying abroad, I got my BSc in Computer Science at EPFL in
-                  Lausanne, and I'm currently pursuing my MSc in the same field,
-                  majoring in Data Management Systems at the Swiss Federal
-                  Institute of Technology (ETH Zurich).
+                  Studying abroad, I'm currently pursuing my MSc in Computer Science,
+                  majoring in Data Management Systems at the Swiss Federal Institute
+                  of Technology (ETH Zurich), after completing my BSc in the same
+                  field at EPFL in Lausanne.
                 </p>
                 <p>
                   My journey has been a blend of academic training and making
                   friends. I have a big passion for programming and problem
-                  solving such that when I'm given a project or a task, I always
-                  push through the challenges to achieve the best possible
-                  outcome.
+                  solving, particularly in data management and cloud-related work,
+                  such that when I'm given a project or a task, I always push
+                  through the challenges to achieve the best possible outcome.
                 </p>
               </div>
             </div>
