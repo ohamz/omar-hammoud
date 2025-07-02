@@ -1,8 +1,12 @@
-.footer-txt {
+.footer-txt, .footer-txt > span {
   color: var(--white-1);
   font-size: 1.1rem;
   font-family: "Genos";
   text-decoration: none;
+}
+
+.footer-txt > span {
+  text-transform: none;
 }
 
 .footer-logo {
