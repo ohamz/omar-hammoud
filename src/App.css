@@ -11,6 +11,7 @@ Main
   align-items: center;
   color: var(--white-1);
   padding: 0 3vw 2vw 4vw;
+  position: relative;
 }
 
 .main-section h1 {
@@ -55,7 +56,9 @@ Main - Home
   flex-direction: row;
   justify-content: space-between;
   align-items: start;
-  background-color: var(--black-3);
+  background: radial-gradient(1200px 50% at 10% 10%, rgba(136,206,82,0.08), transparent 60%),
+              radial-gradient(900px 50% at 90% 10%, rgba(75,173,232,0.06), transparent 60%),
+              var(--black-3);
   padding-bottom: 0;
   margin-bottom: 5vh;
 }
@@ -67,10 +70,19 @@ Main - Home
   flex-direction: column;
   gap: 0;
   overflow: hidden;
+  padding: 2rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.0)), var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
 }
 
 .green-title {
   color: var(--green-1);
+}
+
+.green-title.text-gradient-green {
+  color: inherit;
 }
 
 .home-img {
@@ -142,6 +154,11 @@ Main - About
 
 .about-content {
   width: 50vw;
+  padding: 2rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)), var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
 }
 
 .about-content-head {
@@ -177,6 +194,10 @@ Main - Projects
   align-items: center;
   gap: 4vw 4vw;
   padding: 4vh 2vw;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)), var(--surface-1);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
 }
 
 /* 
@@ -216,8 +237,10 @@ Main - Contact
 .contact-form {
   width: 100%;
   height: 100%;
-  background-color: var(--black-2);
+  background-color: var(--surface-2);
   border-radius: var(--border-radius);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: var(--shadow-md);
 }
 
 .contact-form-content {
@@ -312,6 +335,7 @@ Adjust to mobile phones
 
   .home-txt-box {
     width: 100%;
+    padding: 1.25rem;
   }
 
   .home-img {

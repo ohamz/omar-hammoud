@@ -11,12 +11,14 @@
   align-items: center;
   justify-content: center;
   font: inherit;
+  box-shadow: var(--shadow-sm);
 }
 
 .download-btn:hover {
   color: var(--black-1);
   background-color: var(--green-2);
-  transform: scale(1.05);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
   transition: var(--transition-1);
 }
 

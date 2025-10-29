@@ -5,11 +5,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--grey-1);
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.0)), var(--surface-3);
   border-radius: var(--border-radius);
   padding: 3vw;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--shadow-md);
 }
 
 .project-img {
@@ -40,6 +41,10 @@
   transition: var(--transition-3);
 }
 
+.project:hover {
+  box-shadow: var(--shadow-lg);
+}
+
 .project-badges {
   display: flex;
   flex-wrap: wrap;
@@ -49,7 +54,7 @@
 }
 
 .badge {
-  background: rgba(136, 206, 82, 0.15);
+  background: linear-gradient(180deg, var(--green-1-08), transparent);
   color: var(--green-1);
   border: 1px solid rgba(136, 206, 82, 0.35);
   padding: 0.25rem 0.5rem;

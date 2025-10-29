@@ -25,8 +25,22 @@
 
   --green-1: #88ce52;
   --green-2: #66a435;
+  --green-3: #3e7a1e;
+  --green-1-20: rgba(136, 206, 82, 0.2);
+  --green-1-08: rgba(136, 206, 82, 0.08);
 
   --lightblue-1: #4bade8;
+  --lightblue-1-10: rgba(75, 173, 232, 0.1);
+
+  /* Surfaces */
+  --surface-1: #151515;
+  --surface-2: #1a1a1a;
+  --surface-3: #202020;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.25);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.35);
+  --shadow-lg: 0 18px 48px rgba(0,0,0,0.45);
 
   /* Fonts */
   --font-size-1: 0.8rem;
@@ -57,6 +71,33 @@ body {
   display: flex;
   flex-direction: column;
   background: var(--black-1);
+}
+
+/* Surfaces and shadows */
+.surface-panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.0)) , var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius);
+}
+
+.surface-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.0)) , var(--surface-3);
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--border-radius);
+}
+
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-sm { box-shadow: var(--shadow-sm); }
+
+/* Text and accents */
+.text-gradient-green {
+  background: linear-gradient(90deg, var(--green-1), var(--lightblue-1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* Animation utilities */

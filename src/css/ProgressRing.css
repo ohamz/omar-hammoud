@@ -18,6 +18,32 @@
   margin: 3vw;
   margin: var(--ring-border);
   transition: var(--transition-2);
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.4));
+}
+
+/* Futuristic orbiting energy dot */
+.progress-ring::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff 0 30%, var(--green-1) 35% 100%);
+  box-shadow: 0 0 12px var(--green-1), 0 0 28px var(--green-1-20);
+  transform-origin: center center;
+  transform: rotate(0deg) translateX(calc(50% - var(--ring-border)));
+  animation: ring-orbit 6s linear infinite, ring-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes ring-orbit {
+  to { transform: rotate(360deg) translateX(calc(50% - var(--ring-border))); }
+}
+
+@keyframes ring-pulse {
+  0%, 100% { box-shadow: 0 0 10px var(--green-1), 0 0 24px var(--green-1-20); }
+  50% { box-shadow: 0 0 18px var(--green-1), 0 0 36px var(--green-1-20); }
 }
 
 .background-circle,
