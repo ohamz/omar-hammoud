@@ -107,6 +107,17 @@ Main - Home
   }
 }
 
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.hero-ctas .download-btn {
+  margin: 0; /* override inline margins if any */
+}
+
 /* 
 ------------
 Main - About
@@ -309,6 +320,11 @@ Adjust to mobile phones
 
   #home-btn {
     gap: 2vw;
+  }
+
+  .hero-ctas {
+    justify-content: flex-start;
+    gap: 0.75rem;
   }
 
   /* Main - About */

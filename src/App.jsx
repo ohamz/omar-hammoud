@@ -24,7 +24,11 @@ function App() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setVisibleLink(entry.target.getAttribute("id"));
+            const targetId = entry.target.getAttribute("id");
+            if (targetId) {
+              setVisibleLink(targetId);
+            }
+            entry.target.classList.add("is-visible");
           }
         });
       },
@@ -34,11 +38,23 @@ function App() {
     // Clear and re-observe
     ref.current.forEach((r) => {
       if (r) observer.observe(r);
+      if (r) {
+        const revealChildren = r.querySelectorAll && r.querySelectorAll('.reveal');
+        if (revealChildren && revealChildren.length) {
+          revealChildren.forEach((el) => observer.observe(el));
+        }
+      }
     });
     
     return () => {
       ref.current.forEach((r) => {
         if (r) observer.unobserve(r);
+        if (r) {
+          const revealChildren = r.querySelectorAll && r.querySelectorAll('.reveal');
+          if (revealChildren && revealChildren.length) {
+            revealChildren.forEach((el) => observer.unobserve(el));
+          }
+        }
       });
     };
   }, []);
@@ -53,8 +69,8 @@ function App() {
     <>
       <Navigation visibleLink={visibleLink} />
       <main>
-        <section ref={refCallback} className="main-section" id="home">
-          <div className="home-txt-box">
+        <section ref={refCallback} className="main-section reveal reveal--fade" id="home">
+          <div className="home-txt-box reveal reveal--up">
             <div className="home-intro">hey there!</div>
             <h1>
               I'm Omar,
@@ -67,18 +83,38 @@ function App() {
               adapt easily and rapidly to any working team and tools. Check my
               CV for more!
             </p>
-            <a title="projects-link" href="#projects" id="home-btn">
-              <OtherIcon className="icon" icon="arrow" />
-              View my Work
-            </a>
+            <div className="hero-ctas">
+              <a title="projects-link" href="#projects" id="home-btn" className="pressable hover-raise">
+                <OtherIcon className="icon" icon="arrow" />
+                View my Work
+              </a>
+              <a
+                title="download-cv"
+                href="/assets/Omar_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="download-btn pressable"
+                style={{ marginLeft: '1rem' }}
+              >
+                Download CV
+              </a>
+              <a
+                title="email-me"
+                href="mailto:omar.hammoudx@gmail.com?subject=Hello%20Omar"
+                className="download-btn pressable"
+                style={{ marginLeft: '0.75rem' }}
+              >
+                Email me
+              </a>
+            </div>
           </div>
           <div className="home-img"></div>
         </section>
         <SectionDivider showDivider={false} />
         <section ref={refCallback} className="main-section" id="about">
-          <div className="about-me">
+          <div className="about-me reveal reveal--up">
             <div className="about-img-box"></div>
-            <div className="about-content">
+            <div className="about-content reveal reveal--up">
               <div className="about-content-head">
                 <div className="main-section-title">about me</div>
                 <h2>About me in less than a minute</h2>
@@ -104,7 +140,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="rings">
+          <div className="rings reveal reveal--up">
             <ProgressRing id="0">programming</ProgressRing>
             <ProgressRing id="1">critical thinking</ProgressRing>
             <ProgressRing id="2">problem solving</ProgressRing>
@@ -115,7 +151,7 @@ function App() {
         <section ref={refCallback} className="main-section" id="projects">
           <div className="main-section-title">my projects</div>
           <h2>My recent projects</h2>
-          <div className="projects-container">
+          <div className="projects-container reveal reveal--up">
             <Project title="android mobile app" language="Kotlin" id="0">
               Mobile application that helps you find recipes to cook by
               inputting ingredients, all while following your friends and
@@ -156,8 +192,8 @@ function App() {
         <section ref={refCallback} className="main-section" id="contact">
           <div className="main-section-title">contact</div>
           <h2>Feel free to contact</h2>
-          <div className="contact-content">
-            <div className="contact-txt-box">
+          <div className="contact-content reveal reveal--up">
+            <div className="contact-txt-box reveal reveal--up">
               <OtherIcon className="display-icon" icon="arrow" />
               <div className="contact-txt">
                 <h5>Let's work together</h5>

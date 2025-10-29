@@ -11,9 +11,9 @@ import "../css/ProgressRing.css";
 function ProgressRing({ children, id }) {
   return (
     <div className="ring-box">
-      <div className="progress-ring">
-        <div className="background-circle"></div>
-        <div className="foreground-circle" id={"ring-" + id}></div>
+      <div className="progress-ring" role="img" aria-label={`${children} proficiency`}>
+        <div className="background-circle" aria-hidden="true"></div>
+        <div className="foreground-circle" id={"ring-" + id} aria-hidden="true"></div>
       </div>
       <div className="ring-txt">{children}</div>
     </div>

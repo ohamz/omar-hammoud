@@ -16,7 +16,10 @@
   align-items: center;
   padding: 2.5vh 3vw 0 3.5vw;
   border-bottom: 1px solid var(--grey-1);
-  background-color: var(--black-3);
+  background-color: rgba(21, 21, 21, 0.6);
+  backdrop-filter: saturate(120%) blur(10px);
+  -webkit-backdrop-filter: saturate(120%) blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   overflow: hidden;
   z-index: 999;
 }

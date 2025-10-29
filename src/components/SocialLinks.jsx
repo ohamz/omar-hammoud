@@ -19,7 +19,7 @@ function SocialLinks({ isFooter = false }) {
           title={e.name + "-link"}
           href={e.link}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="me noopener noreferrer"
         >
           <img
             id={e.name + "-icon"}

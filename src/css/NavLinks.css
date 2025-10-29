@@ -5,6 +5,12 @@
   margin: 0.5vh 1vw;
   border-radius: var(--border-radius);
   transition: var(--transition-1);
+  color: var(--black-1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
 }
 
 .download-btn:hover {

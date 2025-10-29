@@ -9,6 +9,7 @@
   border-radius: var(--border-radius);
   padding: 3vw;
   overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .project-img {
@@ -37,6 +38,23 @@
 .project:hover > .project-txt {
   transform: translateY(0);
   transition: var(--transition-3);
+}
+
+.project-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.badge {
+  background: rgba(136, 206, 82, 0.15);
+  color: var(--green-1);
+  border: 1px solid rgba(136, 206, 82, 0.35);
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
 }
 
 .project-txt-title {
