@@ -221,7 +221,6 @@
     no-repeat;
 }
 
-
 #project-8 {
   background: url("../assets/projects-icons/cloud_server.webp") center/cover
     no-repeat;
@@ -344,9 +343,9 @@ Adjust to tablets
   }
 
   .project-small {
-    width: 75vw;
-    height: 75vw;
-    padding: 3vw;
+    width: 100%;
+    height: min(52vw, 320px);
+    padding: 0.9rem;
   }
 
   .project:hover > .project-txt,
@@ -363,15 +362,31 @@ Adjust to tablets
   }
 
   .project-small .project-txt-title {
-    font-size: 1.4rem;
+    font-size: 1.15rem;
   }
 
   .project-small .project-txt-content {
-    font-size: 1.05rem;
+    font-size: 0.9rem;
   }
 
   .project-small .badge {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
+  }
+
+  .project-small .project-img {
+    transform: scale(0.9);
+  }
+
+  .projects-container--other .project-small .project-txt {
+    transform: translateY(0) !important;
+    width: 90%;
+    height: auto;
+    justify-content: flex-end;
+    padding-bottom: 0.2rem;
+  }
+
+  .projects-container--other .project-small .project-badges {
+    display: none;
   }
 }
 

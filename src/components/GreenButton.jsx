@@ -13,7 +13,7 @@ import "../css/GreenButton.css";
 function GreenButton({ children, id, btnTxtColor, isLoading }) {
   return (
     <button type="submit" className={"btn " + btnTxtColor} id={id}>
-      {isLoading ? <div class="loader"></div> : children}
+      {isLoading ? <div className="loader"></div> : children}
     </button>
   );
 }
