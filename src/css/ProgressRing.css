@@ -18,32 +18,83 @@
   margin: 3vw;
   margin: var(--ring-border);
   transition: var(--transition-2);
-  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.4));
+  filter: drop-shadow(0 7px 20px rgba(0,0,0,0.42));
 }
 
-/* Futuristic orbiting energy dot */
+/* Moving energy sweep around the ring */
 .progress-ring::after {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 10px;
-  height: 10px;
+  inset: 0;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #fff 0 30%, var(--green-1) 35% 100%);
-  box-shadow: 0 0 12px var(--green-1), 0 0 28px var(--green-1-20);
-  transform-origin: center center;
-  transform: rotate(0deg) translateX(calc(50% - var(--ring-border)));
-  animation: ring-orbit 6s linear infinite, ring-pulse 2.4s ease-in-out infinite;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg 300deg,
+    rgba(136, 206, 82, 0.03) 300deg 320deg,
+    rgba(136, 206, 82, 0.25) 320deg 336deg,
+    rgba(136, 206, 82, 0.96) 336deg 347deg,
+    rgba(136, 206, 82, 0.45) 347deg 355deg,
+    transparent 358deg 360deg
+  );
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - var(--ring-border) - 1px),
+    #000 calc(100% - var(--ring-border)),
+    #000 99%,
+    transparent 100%
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - var(--ring-border) - 1px),
+    #000 calc(100% - var(--ring-border)),
+    #000 99%,
+    transparent 100%
+  );
+  filter: drop-shadow(0 0 10px rgba(136, 206, 82, 0.52));
+  animation: ring-sweep 3.8s linear infinite;
+  mix-blend-mode: screen;
+  pointer-events: none;
 }
 
-@keyframes ring-orbit {
-  to { transform: rotate(360deg) translateX(calc(50% - var(--ring-border))); }
+@keyframes ring-sweep {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-@keyframes ring-pulse {
-  0%, 100% { box-shadow: 0 0 10px var(--green-1), 0 0 24px var(--green-1-20); }
-  50% { box-shadow: 0 0 18px var(--green-1), 0 0 36px var(--green-1-20); }
+.progress-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 180deg,
+    transparent 0deg 338deg,
+    rgba(75, 173, 232, 0.16) 338deg 349deg,
+    rgba(75, 173, 232, 0.04) 349deg 360deg
+  );
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - var(--ring-border) - 2px),
+    #000 calc(100% - var(--ring-border) + 1px),
+    #000 99%,
+    transparent 100%
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - var(--ring-border) - 2px),
+    #000 calc(100% - var(--ring-border) + 1px),
+    #000 99%,
+    transparent 100%
+  );
+  animation: ring-sweep-secondary 6.7s linear infinite reverse;
+  pointer-events: none;
+}
+
+@keyframes ring-sweep-secondary {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .background-circle,
@@ -58,6 +109,7 @@
 
 .foreground-circle {
   border-color: var(--green-1);
+  filter: drop-shadow(0 0 8px rgba(136, 206, 82, 0.22));
 }
 
 #ring-0 {
@@ -76,6 +128,14 @@
 .ring-box:hover > .progress-ring {
   transform: rotate(360deg) scale(1.2);
   transition: var(--transition-2);
+}
+
+.ring-box:hover > .progress-ring::after {
+  animation-duration: 2.6s;
+}
+
+.ring-box:hover > .progress-ring::before {
+  animation-duration: 4.8s;
 }
 
 /* 

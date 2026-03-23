@@ -1,14 +1,15 @@
 .socials-icons {
   display: flex;
   gap: 1vw;
+  flex-wrap: wrap;
 }
 
 .footer-social-icons {
-  height: 23vh;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 1.5vh 1.5vh;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+  width: 100%;
+  max-width: 180px;
 }
 
 .social-icon {
@@ -24,8 +25,20 @@
   transition: var(--transition-1);
 }
 
+.footer-social-icons .social-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.78));
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
 .social-icon img {
   width: 25px;
+}
+
+.footer-social-icons .social-icon img {
+  width: 28px;
 }
 
 .social-icon:hover {
@@ -33,6 +46,10 @@
   transform: scale(1.1);
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
   transition: var(--transition-1);
+}
+
+.footer-social-icons .social-icon:hover {
+  background: linear-gradient(180deg, #ffffff, #e9ecef);
 }
 
 .social-icon:focus-visible {
@@ -56,10 +73,15 @@ Adjust to mobile phones
   }
 
   .footer-social-icons {
-    height: auto;
-    flex-direction: row;
-    gap: 2vw;
-    padding-bottom: 2vh;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.7rem;
+    max-width: 100%;
+    padding-bottom: 0.3rem;
+  }
+
+  .footer-social-icons .social-icon {
+    width: 42px;
+    height: 42px;
   }
 }
 

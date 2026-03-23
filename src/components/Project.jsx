@@ -9,14 +9,22 @@ import "../css/Project.css";
  * @param {String} props.title
  * @param {String} props.language
  * @param {String} props.id
+ * @param {Boolean} props.small
+ * @param {Boolean} props.hideDescription
+ * @param {String} props.github
  */
-function Project({ children, title, language, id }) {
+function Project({ children, title, language, id, small, hideDescription, github }) {
   const badges = (language || "")
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean);
-  return (
-    <div className="project hover-raise tilt">
+  const cardClasses =
+    (small ? "project-small" : "project") +
+    (hideDescription ? " project--no-description" : "") +
+    " hover-raise tilt";
+
+  const cardContent = (
+    <>
       <div className="project-img" id={"project-" + id}></div>
       <div className="project-txt">
         <div className="project-txt-title">{title}</div>
@@ -29,10 +37,26 @@ function Project({ children, title, language, id }) {
             ))}
           </div>
         )}
-        <p className="project-txt-content">{children}</p>
+        {!hideDescription && <p className="project-txt-content">{children}</p>}
       </div>
-    </div>
+    </>
   );
+
+  if (github) {
+    return (
+      <a
+        className={cardClasses + " project-link-wrap"}
+        href={github}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${title} on GitHub`}
+      >
+        {cardContent}
+      </a>
+    );
+  }
+
+  return <div className={cardClasses}>{cardContent}</div>;
 }
 
 export default Project;

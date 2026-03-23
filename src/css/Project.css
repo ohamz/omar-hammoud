@@ -1,7 +1,5 @@
-.project {
+.project, .project-small {
   position: relative;
-  width: 24vw;
-  height: 24vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,10 +11,28 @@
   box-shadow: var(--shadow-md);
 }
 
+.project-link-wrap {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project {
+  width: 24vw;
+  height: 24vw;
+}
+
+.project-small {
+  width: 100%;
+  height: min(14vw, 240px);
+  padding: 1.1vw;
+}
+
 .project-img {
+  position: relative;
   width: 100%;
   height: 100%;
   border-radius: var(--border-radius);
+  overflow: hidden;
   transition: var(--transition-3);
 }
 
@@ -25,24 +41,46 @@
   height: 85%;
   position: absolute;
   display: flex;
-  transform: translateY(24vw);
   flex-direction: column;
   justify-content: center;
   transition: var(--transition-3);
 }
 
-.project:hover > .project-img {
+.project .project-txt,
+.project-small .project-txt {
+  transform: translateY(calc(100% + 5rem));
+}
+
+.project:hover > .project-img,
+.project-small:hover > .project-img {
   opacity: 0.15;
   transition: var(--transition-3);
 }
 
-.project:hover > .project-txt {
+.project:hover > .project-txt,
+.project-small:hover > .project-txt {
   transform: translateY(0);
   transition: var(--transition-3);
 }
 
-.project:hover {
+.project:hover,
+.project-small:hover {
   box-shadow: var(--shadow-lg);
+}
+
+.projects-container--recent .project {
+  border-color: rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0)),
+    var(--surface-2);
+}
+
+.projects-container--recent .project .project-img {
+  transform: scale(0.95);
+}
+
+.projects-container--recent .project:hover > .project-img {
+  transform: scale(1);
 }
 
 .project-badges {
@@ -70,15 +108,80 @@
   text-align: center;
 }
 
+.project-small .project-txt-title {
+  font-size: 1.15rem;
+}
+
 .project-txt-content {
   height: 65%;
   text-align: start;
 }
 
-.project-txt-footer {
-  height: 10%;
+.project-small .project-txt-content {
+  font-size: 0.82rem;
+}
+
+.project-small .project-img {
+  background-size: contain !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(0.92);
+  filter: saturate(1.03) contrast(1.03);
+}
+
+.project-small .project-badges {
+  gap: 0.35rem;
+}
+
+.project-small .badge {
+  font-size: 0.74rem;
+  padding: 0.2rem 0.45rem;
+}
+
+.project-small:hover > .project-img {
+  transform: scale(1);
+  filter: saturate(1.08) contrast(1.08);
+}
+
+.project--no-description .project-txt {
+  height: auto;
+  width: 90%;
+  justify-content: flex-end;
+}
+
+.project--no-description .project-txt-title {
   margin: 0;
-  text-align: start;
+  line-height: 1.15;
+}
+
+.project--no-description .project-badges {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.projects-container--other .project-small {
+  border-radius: calc(var(--border-radius) - 2px);
+  background:
+    linear-gradient(165deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0)),
+    var(--surface-2);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.projects-container--other .project-small::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.38));
+  pointer-events: none;
+}
+
+.projects-container--other .project--no-description .project-txt {
+  z-index: 1;
+  padding-bottom: 0.35rem;
+}
+
+.projects-container--other .project--no-description .project-txt-title {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65);
 }
 
 #project-0 {
@@ -113,6 +216,43 @@
     no-repeat;
 }
 
+#project-7 {
+  background: url("../assets/projects-icons/rumble.webp") center/100% 100%
+    no-repeat;
+}
+
+
+#project-8 {
+  background: url("../assets/projects-icons/cloud_server.webp") center/cover
+    no-repeat;
+}
+
+#project-9 {
+  background: transparent;
+}
+
+#project-9::before {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 31%;
+  bottom: 31%;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 14px;
+  z-index: 0;
+}
+
+#project-9::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/projects-icons/eventloupe.webp")
+    center/74% auto no-repeat;
+  z-index: 1;
+  pointer-events: none;
+}
+
 /* 
 -----------------------
 Adjust to small laptops
@@ -124,9 +264,16 @@ Adjust to small laptops
     font-size: 1.25rem;
   }
 
-  .project-txt-content,
-  .project-txt-footer {
+  .project-txt-content {
     font-size: 1rem;
+  }
+
+  .project-small .project-txt-title {
+    font-size: 1.05rem;
+  }
+
+  .project-small .project-txt-content {
+    font-size: 0.74rem;
   }
 }
 
@@ -136,13 +283,24 @@ Adjust to small laptops
   ---------------------
   */
 @media screen and (max-width: 1063px) {
+  .project-small {
+    height: min(15.5vw, 220px);
+  }
+
   .project-txt-title {
     font-size: 1.15rem;
   }
 
-  .project-txt-content,
-  .project-txt-footer {
+  .project-txt-content {
     font-size: 0.95rem;
+  }
+
+  .project-small .project-txt-title {
+    font-size: 1rem;
+  }
+
+  .project-small .project-txt-content {
+    font-size: 0.7rem;
   }
 }
 
@@ -156,9 +314,20 @@ Adjust to tablets
     font-size: 0.85rem;
   }
 
-  .project-txt-content,
-  .project-txt-footer {
+  .project-txt-content {
     font-size: 0.75rem;
+  }
+
+  .project-small {
+    height: min(16vw, 210px);
+  }
+
+  .project-small .project-txt-title {
+    font-size: 0.95rem;
+  }
+
+  .project-small .project-txt-content {
+    font-size: 0.66rem;
   }
 }
 
@@ -174,17 +343,35 @@ Adjust to tablets
     height: 75vw;
   }
 
-  .project-txt {
-    transform: translateY(75vw);
+  .project-small {
+    width: 75vw;
+    height: 75vw;
+    padding: 3vw;
+  }
+
+  .project:hover > .project-txt,
+  .project-small:hover > .project-txt {
+    transform: translateY(0) !important;
   }
 
   .project-txt-title {
     font-size: 1.5rem;
   }
 
-  .project-txt-content,
-  .project-txt-footer {
+  .project-txt-content {
     font-size: 1.1rem;
+  }
+
+  .project-small .project-txt-title {
+    font-size: 1.4rem;
+  }
+
+  .project-small .project-txt-content {
+    font-size: 1.05rem;
+  }
+
+  .project-small .badge {
+    font-size: 0.78rem;
   }
 }
 
@@ -198,8 +385,7 @@ Adjust to big desktops
     font-size: 1.8rem;
   }
 
-  .project-txt-content,
-  .project-txt-footer {
+  .project-txt-content {
     font-size: 1.4rem;
   }
 }
@@ -214,8 +400,7 @@ Adjust to bigger desktops
     font-size: 2.4rem;
   }
 
-  .project-txt-content,
-  .project-txt-footer {
+  .project-txt-content {
     font-size: 1.9rem;
   }
 }

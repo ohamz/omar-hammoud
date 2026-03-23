@@ -9,7 +9,7 @@ import SocialLinks from "./components/SocialLinks";
 import OtherIcon from "./components/OtherIcon";
 
 import { useState, useRef, useEffect } from "react";
-import { links } from "./constants/data";
+import { links, recentProjects, otherProjects } from "./constants/data";
 
 /**
  * App component - main component
@@ -20,6 +20,21 @@ function App() {
   // Dynamic active links logic
   const ref = useRef([]);
   useEffect(() => {
+    const getRevealChildren = (element) =>
+      element ? Array.from(element.querySelectorAll(".reveal")) : [];
+
+    const observeSection = (section, observer) => {
+      if (!section) return;
+      observer.observe(section);
+      getRevealChildren(section).forEach((el) => observer.observe(el));
+    };
+
+    const unobserveSection = (section, observer) => {
+      if (!section) return;
+      observer.unobserve(section);
+      getRevealChildren(section).forEach((el) => observer.unobserve(el));
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -34,28 +49,11 @@ function App() {
       },
       { threshold: [0.3, 0.7] }
     );
-    
-    // Clear and re-observe
-    ref.current.forEach((r) => {
-      if (r) observer.observe(r);
-      if (r) {
-        const revealChildren = r.querySelectorAll && r.querySelectorAll('.reveal');
-        if (revealChildren && revealChildren.length) {
-          revealChildren.forEach((el) => observer.observe(el));
-        }
-      }
-    });
-    
+
+    ref.current.forEach((section) => observeSection(section, observer));
+
     return () => {
-      ref.current.forEach((r) => {
-        if (r) observer.unobserve(r);
-        if (r) {
-          const revealChildren = r.querySelectorAll && r.querySelectorAll('.reveal');
-          if (revealChildren && revealChildren.length) {
-            revealChildren.forEach((el) => observer.unobserve(el));
-          }
-        }
-      });
+      ref.current.forEach((section) => unobserveSection(section, observer));
     };
   }, []);
 
@@ -94,7 +92,6 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="download-btn pressable"
-                style={{ marginLeft: '1rem' }}
               >
                 Download CV
               </a>
@@ -102,7 +99,6 @@ function App() {
                 title="email-me"
                 href="mailto:omar.hammoudx@gmail.com?subject=Hello%20Omar"
                 className="download-btn pressable"
-                style={{ marginLeft: '0.75rem' }}
               >
                 Email me
               </a>
@@ -151,41 +147,34 @@ function App() {
         <section ref={refCallback} className="main-section" id="projects">
           <div className="main-section-title">my projects</div>
           <h2>My recent projects</h2>
-          <div className="projects-container reveal reveal--up">
-            <Project title="android mobile app" language="Kotlin" id="0">
-              Mobile application that helps you find recipes to cook by
-              inputting ingredients, all while following your friends and
-              sharing your recipes with them.
-            </Project>
-            <Project title="liking nodes" language="JavaScript, Python" id="5">
-              Web application with an interactive graph-based frontend where
-              users can add and like nodes. Handles database interactions, and
-              enables real-time local updates across active sessions.
-            </Project>
-            <Project title="ACME protocol" language="Java" id="6">
-              A remake of the ACME certificate protocol, managing the process of
-              certificate issuance and revocation. It includes multiple servers
-              for handling challenges and certificate requests.
-            </Project>
-            <Project title="bicycle pathfinder" language="Java" id="1">
-              Advanced pathfinder for bicycles all over Switzerland’s area. It
-              gives the most efficient route between two or more pinpoints by
-              considering the distance, elevation and bird’s eye view.
-            </Project>
-            <Project title="unix filesystem" language="C" id="2">
-              A simplified version of the Unix v6 filesystem of the 1970s.
-              Constructed the skeleton of the system through a hierarchy of
-              layers: sector, mount, inode and directory.
-            </Project>
-            <Project title="snake" language="Assembly" id="3">
-              Snake minigame coded on a Gecko4Education Board. The FPGA is
-              programmed to manage the game logic, input handling and screen
-              output (LEDs).
-            </Project>
-            <Project title="crossy cat" language="C" id="4">
-              A simplified remake of the ’Crossy Road’ mobile game programmed on
-              a Nintendo DS using the libnds library.
-            </Project>
+          <div className="projects-container projects-container--recent reveal reveal--up">
+            {recentProjects.map((project) => (
+              <Project
+                key={project.id}
+                title={project.title}
+                language={project.language}
+                id={project.id}
+                github={project.github}
+              >
+                {project.description}
+              </Project>
+            ))}
+          </div>
+          <h2 style={{ marginTop: "8vh" }}>Other projects</h2>
+          <div className="projects-container projects-container--other reveal reveal--up">
+            {otherProjects.map((project) => (
+              <Project
+                key={project.id}
+                title={project.title}
+                language={project.language}
+                id={project.id}
+                small
+                hideDescription
+                github={project.github}
+              >
+                {project.description}
+              </Project>
+            ))}
           </div>
         </section>
         <SectionDivider />
